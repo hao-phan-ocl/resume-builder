@@ -140,13 +140,18 @@ export default function ResumeForm({ data, onChange }: Props) {
           <Field label="Location">
             <input className={input} value={data.location} onChange={e => set('location', e.target.value)} placeholder="City, Country" />
           </Field>
+          <Field label="Open to Relocate">
+            <input className={input} value={data.openToRelocate} onChange={e => set('openToRelocate', e.target.value)} placeholder="e.g. Europe" />
+          </Field>
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          <Field label="Email">
+            <input className={input} value={data.email} onChange={e => set('email', e.target.value)} placeholder="you@example.com" />
+          </Field>
           <Field label="Phone">
             <input className={input} value={data.phone} onChange={e => set('phone', e.target.value)} placeholder="+1 234 567 890" />
           </Field>
         </div>
-        <Field label="Email">
-          <input className={input} value={data.email} onChange={e => set('email', e.target.value)} placeholder="you@example.com" />
-        </Field>
         <div className="grid grid-cols-2 gap-3">
           <Field label="Website">
             <input className={input} value={data.website} onChange={e => set('website', e.target.value)} placeholder="yoursite.com" />

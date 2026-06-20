@@ -2,11 +2,20 @@ import { useState, useRef } from 'react'
 import { useReactToPrint } from 'react-to-print'
 import ResumeForm from './components/ResumeForm'
 import ResumePreview from './components/ResumePreview'
+import ResumePreviewNoir from './components/ResumePreviewNoir'
 import { defaultResumeData } from './types/resume'
 import type { ResumeData } from './types/resume'
 
+type Style = 'indigo' | 'noir'
+
+const styles: { id: Style; label: string; preview: string }[] = [
+  { id: 'indigo', label: 'Indigo', preview: '#4f46e5' },
+  { id: 'noir', label: 'Noir', preview: '#f59e0b' },
+]
+
 export default function App() {
   const [data, setData] = useState<ResumeData>(defaultResumeData)
+  const [activeStyle, setActiveStyle] = useState<Style>('indigo')
   const printRef = useRef<HTMLDivElement>(null)
   const importRef = useRef<HTMLInputElement>(null)
 
@@ -94,9 +103,28 @@ export default function App() {
       <input ref={importRef} type="file" accept=".json" className="hidden" onChange={handleImport} />
 
       {/* ── Preview panel ── */}
-      <div className="flex-1 overflow-auto bg-gray-200 flex justify-center py-10 px-6">
+      <div className="flex-1 overflow-auto bg-gray-200 flex flex-col items-center py-10 px-6">
+        {/* Style switcher */}
+        <div className="flex gap-2 mb-6">
+          {styles.map(s => (
+            <button
+              key={s.id}
+              onClick={() => setActiveStyle(s.id)}
+              className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold border transition-all ${
+                activeStyle === s.id
+                  ? 'bg-white border-gray-400 text-gray-900 shadow-sm'
+                  : 'bg-white/50 border-gray-200 text-gray-500 hover:border-gray-300 hover:text-gray-700'
+              }`}
+            >
+              <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ background: s.preview }} />
+              {s.label}
+            </button>
+          ))}
+        </div>
+
         <div ref={printRef}>
-          <ResumePreview data={data} />
+          {activeStyle === 'indigo' && <ResumePreview data={data} />}
+          {activeStyle === 'noir' && <ResumePreviewNoir data={data} />}
         </div>
       </div>
     </div>

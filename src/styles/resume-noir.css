@@ -1,0 +1,307 @@
+/* Style 2 — "Noir" editorial template */
+
+.noir-wrapper {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.noir-container {
+  width: 794px;
+  min-height: 1123px;
+  background: #fafaf8;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Header band ──────────────────────────────────────── */
+
+.noir-header {
+  background: #111110;
+  padding: 36px 44px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.noir-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 44px;
+  right: 44px;
+  height: 2px;
+  background: linear-gradient(90deg, #f59e0b 0%, #fcd34d 60%, transparent 100%);
+}
+
+.noir-name {
+  font-size: 42px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+
+.noir-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #f59e0b;
+  margin-top: 8px;
+  letter-spacing: 0.3px;
+}
+
+.noir-contact-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 14px;
+  align-items: center;
+}
+
+.noir-contact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+.noir-sep {
+  color: #4b4b49;
+  margin: 0 8px;
+  line-height: 1;
+}
+
+.noir-contact-icon {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  color: #6b7280;
+}
+
+.noir-contact-link {
+  font-size: 10px;
+  color: #9ca3af;
+  text-decoration: none;
+}
+
+.noir-contact-link:hover {
+  color: #f59e0b;
+}
+
+.noir-relocate {
+  font-size: 10px;
+  color: #f59e0b;
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ─── Body: two columns ────────────────────────────────── */
+
+.noir-body {
+  display: flex;
+  flex: 1;
+}
+
+/* Left column */
+.noir-left {
+  width: 230px;
+  flex-shrink: 0;
+  padding: 32px 28px;
+  border-right: 1px solid #e8e7e3;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.noir-section-heading {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f59e0b;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #f3e9cc;
+}
+
+.noir-summary {
+  font-size: 11px;
+  color: #44403c;
+  line-height: 1.8;
+}
+
+/* Skills */
+.noir-skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.noir-skill-tag {
+  padding: 3px 9px;
+  font-size: 9.5px;
+  font-weight: 500;
+  color: #78716c;
+  background: #f5f5f0;
+  border: 1px solid #e2e0da;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* Education in left */
+.noir-edu-item {
+  margin-bottom: 14px;
+}
+
+.noir-edu-school {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1c1917;
+  line-height: 1.3;
+}
+
+.noir-edu-degree {
+  font-size: 10px;
+  color: #78716c;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+.noir-edu-dates {
+  font-size: 9.5px;
+  color: #f59e0b;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Right column — experience */
+.noir-right {
+  flex: 1;
+  padding: 32px 36px;
+  min-width: 0;
+}
+
+/* Experience block */
+.noir-exp-item {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e8e7e3;
+}
+
+.noir-exp-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.noir-exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+
+.noir-exp-company {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1c1917;
+  letter-spacing: -0.3px;
+}
+
+.noir-exp-location {
+  font-size: 9.5px;
+  color: #a8a29e;
+  white-space: nowrap;
+}
+
+.noir-role-entry {
+  margin-top: 8px;
+}
+
+.noir-role-entry + .noir-role-entry {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #e2ded8;
+}
+
+.noir-role-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.noir-role-title {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #f59e0b;
+}
+
+.noir-role-dates {
+  font-size: 9.5px;
+  color: #a8a29e;
+  white-space: nowrap;
+  background: #f5f5f0;
+  padding: 1px 7px;
+  border-radius: 20px;
+}
+
+.noir-bullet {
+  position: relative;
+  padding-left: 12px;
+  font-size: 10.5px;
+  color: #57534e;
+  line-height: 1.75;
+}
+
+.noir-bullet::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #d97706;
+  font-size: 9px;
+  top: 1px;
+}
+
+.noir-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.noir-stack-tag {
+  padding: 2px 8px;
+  font-size: 9px;
+  font-weight: 600;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* ─── Print ───────────────────────────────────────────── */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  .noir-wrapper {
+    margin: 0;
+    padding: 0;
+  }
+
+  .noir-container {
+    width: 210mm;
+    min-height: 297mm;
+    box-shadow: none;
+  }
+}

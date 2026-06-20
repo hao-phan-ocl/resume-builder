@@ -28,6 +28,7 @@ export interface ResumeData {
   name: string
   title: string
   location: string
+  openToRelocate: string
   email: string
   phone: string
   website: string
@@ -43,6 +44,7 @@ export const defaultResumeData: ResumeData = {
   name: 'Alexandra Chen',
   title: 'Senior Product Designer',
   location: 'San Francisco, CA',
+  openToRelocate: '',
   email: 'alex.chen@email.com',
   phone: '+1 (415) 555-0192',
   website: 'alexchen.design',
